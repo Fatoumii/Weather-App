@@ -17,22 +17,74 @@ img {
 }
 h3 {
   text-align: center;
+  font-family: "Open Sans Condensed", sans-serif;
+  margin: 10px;
+  font-size: 30px;
 }
 .content {
   grid-area: content;
-  border: 1px solid black;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "results form";
 }
 
 .form {
-  border: 3px solid firebrick;
   grid-area: form;
   padding: 20px;
 }
+form {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 2.5fr 1fr;
+  grid-template-areas: "city submit" "country submit";
+}
+div p {
+  padding-left: 12px;
+}
+.city {
+  grid-area: city;
+  margin: 3px;
+  padding-left: 12px;
+  height: 25px;
+  border-radius: 2px;
+  border: none;
+
+  background-color: whitesmoke;
+}
+.country {
+  grid-area: country;
+  margin: 3px;
+  padding-left: 12px;
+
+  height: 25px;
+  border-radius: 2px;
+  border: none;
+  background-color: whitesmoke;
+}
+button {
+  grid-area: submit;
+  margin: 0px 6px;
+  background-color: whitesmoke;
+  box-shadow: 0px 0px 12px 5px rgb(224, 224, 224);
+  border-radius: 2px;
+}
+button:hover {
+  box-shadow: 0px 0px 15px 5px rgb(224, 224, 224);
+  transform: scale(1.05);
+  transition: 1s;
+  cursor: pointer;
+}
+
 .results {
   grid-area: results;
   padding: 20px;
-  border: 1px solid blue;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "info pic";
+}
+.info {
+  grid-area: info;
+}
+.pic {
+  grid-area: pic;
 }
