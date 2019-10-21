@@ -5,7 +5,9 @@ body {
   grid-template-rows: 1fr 2fr;
   grid-template-columns: 1fr;
   grid-template-areas: "header " "content";
+  font-family: "Cormorant Garamond", serif;
 }
+
 img {
   width: 100vw;
   height: 60vh;
@@ -15,9 +17,9 @@ img {
 .header {
   grid-area: header;
 }
+
 h3 {
   text-align: center;
-  font-family: "Open Sans Condensed", sans-serif;
   margin: 10px;
   font-size: 30px;
 }
@@ -46,33 +48,47 @@ div p {
   margin: 3px;
   padding-left: 12px;
   height: 25px;
-  border-radius: 2px;
   border: none;
-
+  border-radius: 2px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 15px;
   background-color: whitesmoke;
+}
+.city:focus {
+  outline: none;
 }
 .country {
   grid-area: country;
   margin: 3px;
   padding-left: 12px;
-
+  font-family: "Cormorant Garamond", serif;
+  font-size: 15px;
   height: 25px;
-  border-radius: 2px;
   border: none;
+  border-radius: 2px;
   background-color: whitesmoke;
+}
+.country:focus {
+  outline: none;
 }
 button {
   grid-area: submit;
   margin: 0px 6px;
   background-color: whitesmoke;
+  border: 0.5px rgb(221, 220, 220);
   box-shadow: 0px 0px 12px 5px rgb(224, 224, 224);
   border-radius: 2px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 17px;
 }
 button:hover {
   box-shadow: 0px 0px 15px 5px rgb(224, 224, 224);
   transform: scale(1.05);
   transition: 1s;
   cursor: pointer;
+}
+button:focus {
+  outline: none;
 }
 
 .results {
@@ -84,6 +100,9 @@ button:hover {
 }
 .info {
   grid-area: info;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .pic {
   grid-area: pic;

@@ -10,7 +10,9 @@ const Weather = props => {
           <p>
             Location: {city}, {country}
           </p>
-        ) : null}
+        ) : (
+          <p>Please enter a location >></p>
+        )}
         {description ? (
           <p>
             Conditions:{" "}

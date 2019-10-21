@@ -18,7 +18,7 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <h3>Real-Time Weather at your fingertips...</h3>
+        <h3>Real Time Weather at your fingertips...</h3>
         <div className="content">
           <Form getWeather={this.getWeather} />
           <Weather
