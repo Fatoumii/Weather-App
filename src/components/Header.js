@@ -1,9 +1,9 @@
 import React from "react";
+import pic from "../image.jpg";
 
 const Header = () => (
-  <div>
-    <h1>Weather Finder</h1>
-    <p>Find the temperature conditions in your area!</p>
+  <div className="header">
+    <img src={pic} alt="refreshing scenery" />
   </div>
 );
 

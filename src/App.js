@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Form from "./components/Form";
 import Weather from "./components/Weather";
 import APIKey from "./config";
+import "./App.css";
 
 class App extends React.Component {
   state = {
@@ -17,15 +18,18 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <Form getWeather={this.getWeather} />
-        <Weather
-          temperature={this.state.temperature}
-          city={this.state.city}
-          country={this.state.country}
-          humidity={this.state.humidity}
-          description={this.state.description}
-          error={this.state.error}
-        />
+        <h3>Weather Finder</h3>
+        <div className="content">
+          <Form getWeather={this.getWeather} />
+          <Weather
+            temperature={this.state.temperature}
+            city={this.state.city}
+            country={this.state.country}
+            humidity={this.state.humidity}
+            description={this.state.description}
+            error={this.state.error}
+          />
+        </div>
       </div>
     );
   }

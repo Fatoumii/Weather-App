@@ -3,7 +3,7 @@ import React from "react";
 const Weather = props => {
   const { temperature, city, country, humidity, description, error } = props;
   return (
-    <div>
+    <div className="results">
       {city && country ? (
         <p>
           Location: {city}, {country}
