@@ -1,26 +1,66 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Header from "./components/Header";
+import Form from "./components/Form";
+import Weather from "./components/Weather";
+import APIKey from "./config";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    temperature: "",
+    city: "",
+    country: "",
+    humidity: "",
+    description: "",
+    error: undefined
+  };
+  render() {
+    return (
+      <div>
+        <Header />
+        <Form getWeather={this.getWeather} />
+        <Weather
+          temperature={this.state.temperature}
+          city={this.state.city}
+          country={this.state.country}
+          humidity={this.state.humidity}
+          description={this.state.description}
+          error={this.state.error}
+        />
+      </div>
+    );
+  }
+
+  getWeather = async event => {
+    event.preventDefault();
+
+    const city = event.target.city.value;
+    const country = event.target.country.value;
+
+    const apiCall = await fetch(
+      `http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&APPID=${APIKey}`
+    );
+    const data = await apiCall.json();
+
+    if (city && country) {
+      this.setState({
+        temperature: data.list[0].main.temp,
+        city: data.city.name,
+        country: data.city.country,
+        humidity: data.list[0].main.humidity,
+        description: data.list[0].weather[0].description,
+        error: ""
+      });
+    } else {
+      this.setState({
+        temperature: "",
+        city: "",
+        country: "",
+        humidity: "",
+        description: "",
+        error: "Please enter a value"
+      });
+    }
+  };
 }
 
 export default App;
