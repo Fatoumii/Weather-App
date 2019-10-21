@@ -1,4 +1,5 @@
 import React from "react";
+const kelvinToCelsius = require("kelvin-to-celsius");
 
 const Weather = props => {
   const { temperature, city, country, humidity, description, error } = props;
@@ -11,7 +12,9 @@ const Weather = props => {
           </p>
         ) : null}
         {description ? <p>Conditions: {description}</p> : null}
-        {temperature ? <p>Temperature: {temperature}</p> : null}
+        {temperature ? (
+          <p>Temperature: {kelvinToCelsius(temperature).toFixed(1)}°C</p>
+        ) : null}
         {humidity ? <p>Humidity: {humidity}</p> : null}
         {error ? <p>{error}</p> : null}
       </div>
