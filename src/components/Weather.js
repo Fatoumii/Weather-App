@@ -11,7 +11,17 @@ const Weather = props => {
             Location: {city}, {country}
           </p>
         ) : null}
-        {description ? <p>Conditions: {description}</p> : null}
+        {description ? (
+          <p>
+            Conditions:{" "}
+            {description
+              .split(" ")
+              .map(x => {
+                return x[0].toUpperCase() + x.slice(1);
+              })
+              .join(" ")}
+          </p>
+        ) : null}
         {temperature ? (
           <p>Temperature: {kelvinToCelsius(temperature).toFixed(1)}°C</p>
         ) : null}
