@@ -74,7 +74,7 @@ div p {
 .country:focus {
   outline: none;
 }
-button {
+.getWeather {
   grid-area: submit;
   margin: 0px 6px;
   background-color: whitesmoke;
@@ -84,13 +84,13 @@ button {
   font-family: "Cormorant Garamond", serif;
   font-size: 17px;
 }
-button:hover {
+.getWeather:hover {
   box-shadow: 0px 0px 15px 5px rgb(224, 224, 224);
   transform: scale(1.05);
   transition: 1s;
   cursor: pointer;
 }
-button:focus {
+.getWeather:focus {
   outline: none;
 }
 
@@ -118,4 +118,5 @@ button:focus {
   object-fit: cover;
   border-radius: 1.5px;
   box-shadow: 0px 0px 30px 10px rgb(206, 204, 204);
+  opacity: 0.7;
 }
