@@ -106,6 +106,7 @@ button:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 .pic {
   grid-area: pic;

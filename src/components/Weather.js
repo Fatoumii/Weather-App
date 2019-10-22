@@ -8,15 +8,7 @@ import Clear from "../weather-images/clearsky.jpg";
 const kelvinToCelsius = require("kelvin-to-celsius");
 
 const Weather = props => {
-  const {
-    temperature,
-    city,
-    country,
-    humidity,
-    description,
-    error,
-    getWeather
-  } = props;
+  const { temperature, city, country, humidity, description, error } = props;
   return (
     <div className="results">
       <div className="info">
@@ -25,7 +17,7 @@ const Weather = props => {
             Location: {city}, {country}
           </p>
         ) : (
-          <p>Please enter a location >></p>
+          <p>Enter a location for a visual representation >>></p>
         )}
         {description ? (
           <p>
