@@ -20,7 +20,11 @@ class App extends React.Component {
         <Header />
         <h3>Real Time Weather at your fingertips...</h3>
         <div className="content">
-          <Form getWeather={this.getWeather} />
+          <Form
+            getWeather={this.getWeather}
+            city={this.state.city}
+            country={this.state.country}
+          />
           <Weather
             temperature={this.state.temperature}
             city={this.state.city}
@@ -61,7 +65,7 @@ class App extends React.Component {
         country: "",
         humidity: "",
         description: "",
-        error: "Please enter a value"
+        error: "Error! You must enter a value"
       });
     }
   };

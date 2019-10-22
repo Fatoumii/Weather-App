@@ -1,4 +1,10 @@
 import React from "react";
+import Clouds from "../weather-images/clouds.jpg";
+import Rain from "../weather-images/rain.jpg";
+import Snow from "../weather-images/snow.jpg";
+import Sun from "../weather-images/sun.jpg";
+import Clear from "../weather-images/clearsky.jpg";
+
 const kelvinToCelsius = require("kelvin-to-celsius");
 
 const Weather = props => {
@@ -30,7 +36,22 @@ const Weather = props => {
         {humidity ? <p>Humidity: {humidity}</p> : null}
         {error ? <p>{error}</p> : null}
       </div>
-      <p className="pic">**place pic here**</p>
+      <div>
+        <img
+          src={
+            description.includes("cloud")
+              ? Clouds
+              : description.includes("sun")
+              ? Sun
+              : description.includes("snow")
+              ? Snow
+              : description.includes("rain")
+              ? Rain
+              : Clear
+          }
+          className="weatherimg"
+        />
+      </div>
     </div>
   );
 };
