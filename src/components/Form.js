@@ -11,7 +11,7 @@ class Form extends React.Component {
     return (
       <div>
         <div className="form">
-          <p>Find the weather conditions in your area!</p>
+          <p>Enter your location below</p>
           <form onSubmit={getWeather}>
             <input
               type="text"

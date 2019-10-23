@@ -1,9 +1,4 @@
 import React from "react";
-// import Clouds from "../weather-images/clouds.jpg";
-// import Rain from "../weather-images/rain.jpg";
-// import Snow from "../weather-images/snow.jpg";
-// import Sun from "../weather-images/sun.jpg";
-// import Clear from "../weather-images/clearsky.jpg";
 
 const kelvinToCelsius = require("kelvin-to-celsius");
 
@@ -17,7 +12,7 @@ const Weather = props => {
             Location: {city}, {country}
           </p>
         ) : (
-          <p>Enter a location for a visual representation >></p>
+          <p>Find the weather conditions in your area!</p>
         )}
         {description ? (
           <p>
@@ -36,22 +31,6 @@ const Weather = props => {
         {humidity ? <p>Humidity: {humidity}</p> : null}
         {error ? <p>{error}</p> : null}
       </div>
-      {/* <div>
-        <img
-          src={
-            description.includes("cloud")
-              ? Clouds
-              : description.includes("sun")
-              ? Sun
-              : description.includes("snow")
-              ? Snow
-              : description.includes("rain")
-              ? Rain
-              : Clear
-          }
-          className="weatherimg"
-        />
-      </div> */}
     </div>
   );
 };
