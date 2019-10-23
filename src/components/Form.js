@@ -7,7 +7,6 @@ class Form extends React.Component {
   };
   render() {
     const { getWeather } = this.props;
-    console.log(this.state);
     return (
       <div>
         <div className="form">
@@ -32,17 +31,12 @@ class Form extends React.Component {
                 this.setState({ country: event.target.value });
               }}
             />
-            <button className="getWeather">Get Weather</button>
+            <button>Get Weather</button>
           </form>
         </div>
-        <button onClick={this.resetData}>Reset</button>
       </div>
     );
   }
-  resetData = () => {
-    this.setState({ city: "", country: "" });
-  };
 }
 
-//reset isn't working - media queries - images
 export default Form;
