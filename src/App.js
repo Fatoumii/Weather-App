@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import Form from "./components/Form";
 import Weather from "./components/Weather";
+import APIKey from "./config.js";
 import "./App.css";
 
 class App extends React.Component {
@@ -45,7 +46,7 @@ class App extends React.Component {
     const country = event.target.country.value;
 
     const apiCall = await fetch(
-      `http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&APPID=dd243f07a1e18750d6c508a09806ddf4`
+      `http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&APPID=${APIKey}`
     );
     const data = await apiCall.json();
 
