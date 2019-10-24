@@ -1,6 +1,6 @@
 # Weather App
 
-A responsive project where you're able to view all students, add a student, delete a student and progress them using React and CSS, with data being requested from Open Weather Map.
+A simple responsive weather project where users can retrieve live weather conditions by entering location details. Using React and CSS, with data being requested from Open Weather Map.
 
 ## Getting Started
 
