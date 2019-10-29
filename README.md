@@ -14,6 +14,10 @@ Clone this repository with command **`git clone https://github.com/Fatoumii/Weat
 
 At this point, start the server by running the script **`npm start`**. With this, you'll have the application up and running on your local machine.
 
+### Installing
+
+This project can be viewed here:
+
 ## Built With
 
 ```React https://reactjs.org/ - Framework used
